@@ -22,5 +22,6 @@ Test live in Features/borrow.feature in gherkin format for cucumber framework
 - npm test
 
 ### Results 
-- results are in Report folder
+- test execution results shown after run 
+- html reports are in Reports folder
 
