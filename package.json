@@ -4,12 +4,14 @@
   "description": "demo assignment",
   "main": "borrow.page.js",
   "dependencies": {
+    "@rpii/wdio-html-reporter": "^7.7.1",
     "@wdio/cli": "^7.0.0",
     "@wdio/cucumber-framework": "^7.7.5",
     "@wdio/local-runner": "^7.7.6",
     "@wdio/spec-reporter": "^7.7.5",
     "chromedriver": "^91.0.1",
-    "wdio-chromedriver-service": "^7.2.0"
+    "wdio-chromedriver-service": "^7.2.0",
+    "wdio-html-nice-reporter": "^7.7.13"
   },
   "devDependencies": {},
   "scripts": {

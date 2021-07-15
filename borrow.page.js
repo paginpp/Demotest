@@ -1,45 +1,58 @@
 const Page = require('./page');
 const testDataFile = require('./testcasedata');
 /**
- * sub page containing specific selectors and methods for a specific page
+ * Borrow page containing specific selectors and methods for a specific page
  */
 class BorrowPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
-    get btnSubmit () { return $('button[type="submit"]') }
-
+    /** application type selector for single application*/
     get appTypeSingle() {return $('[for="application_type_single"]')}
+
+    /**  selector for borrow type home*/
     get borrowTypeHome() {return $('[for="borrow_type_home"]')}
+
+    /**  selector for income*/
     get mainIncome() {return $('input[aria-labelledby="q2q1"]')}
+
+    /**  selector for other income*/
     get otherIncome() {return $('input[aria-labelledby="q2q2"]')}
+
+    /**  selector for number of dependants*/
     get numOfDep() { return $('select[title="Number of dependants"]')}
+
+    /**  selector for living expenses*/
     get livingExpenses() {return $('input[aria-labelledby="q3q1"]')}
+
+    /**  selector for current home loan repayments*/
     get currentHomeLoanRep() {return $('input[aria-labelledby="q3q2"]')}
+
+    /**  selector for other loan repayments*/
     get otherLoanRep() {return $('input[aria-labelledby="q3q3"]')}
+
+    /**  selector for other commitments*/
     get otherCommitments() {return $('input[aria-labelledby="q3q4"]')}
+
+    /**  selector for total credit cards limits*/
     get totalcreditCardLimits() {return $('input[aria-labelledby="q3q5"]')}
 
+    /**  selector for borrow power  calculation button*/
     get btnBorrow(){ return $("button[id='btnBorrowCalculater']")}
 
+    /**  selector for borrow power text after calculation*/
     get borrowPowerText(){ return $("span[id='borrowResultTextAmount']")}
 
+    /**  selector for start over calculation button */
     get btnStartOver(){ return $("button[class='start-over']")}
 
+    /**  selector for error text in case of incorrect values in calculation */
     get borrowErrorText() {return $("span[class='borrow__error__text']")}
 
 
     /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * method to fill the required values in borrow page form
      */
-    async login (username, password) {
-        await (await this.inputUsername).setValue(username);
-        await (await this.inputPassword).setValue(password);
-        await (await this.btnSubmit).click();
-    }
 
     async setBorrowPageValues(testName){
 
@@ -78,7 +91,7 @@ class BorrowPage extends Page {
     }
 
     /**
-     * overwrite specifc options to adapt it to page object
+     * open required page
      */
     open () { return super.openborrow();
     }

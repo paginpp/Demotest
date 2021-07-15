@@ -1,3 +1,6 @@
+/***
+Test data for tests with names BorrowPower, StartOver and ErrorMessage
+*/
 module.exports.testCaseData = {
     BorrowPower: {
         appType: "single",
